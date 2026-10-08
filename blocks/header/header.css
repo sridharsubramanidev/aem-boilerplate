@@ -1,121 +1,46 @@
-/* ==========================
-   PREMIUM AUREVIA HEADER
-   ========================== */
+/* ===============================
+   AUREVIA PREMIUM HEADER OVERRIDES
+   =============================== */
 
-:root {
-  --premium-primary: #2563eb;
-  --premium-text: #0f172a;
-  --premium-muted: #64748b;
-  --premium-bg: rgba(255,255,255,0.95);
-  --premium-border: #e2e8f0;
-}
-
-/* Glass Header */
 header .nav-wrapper {
-  backdrop-filter: blur(12px);
-  background: var(--premium-bg);
-  border-bottom: 1px solid var(--premium-border);
-  box-shadow: 0 2px 20px rgb(0 0 0 / 6%);
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
 }
 
-/* Nav Height */
 header nav {
-  min-height: 72px;
+  max-width: 1400px;
 }
 
 /* Brand */
 header .nav-brand {
-  font-size: 1.75rem;
+  font-size: 28px;
   font-weight: 800;
   letter-spacing: -1px;
 }
 
 header .nav-brand a {
+  color: #111827;
   text-decoration: none;
-  color: var(--premium-text);
 }
 
-/* Desktop Menu */
+/* Desktop navigation */
 @media (width >= 900px) {
 
   header nav .nav-sections ul {
     gap: 36px;
   }
 
-  header nav .nav-sections a {
-    position: relative;
-    text-decoration: none;
-    font-weight: 500;
-    color: var(--premium-text);
-    transition: all .3s ease;
+  header nav .nav-sections ul > li > a,
+  header nav .nav-sections ul > li > button {
+    color: #374151;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.3s ease;
   }
 
-  header nav .nav-sections a:hover {
-    color: var(--premium-primary);
-  }
-
-  /* Animated underline */
-  header nav .nav-sections a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    width: 0;
-    height: 2px;
-    border-radius: 10px;
-    background: var(--premium-primary);
-    transition: width .3s ease;
-  }
-
-  header nav .nav-sections a:hover::after {
-    width: 100%;
+  header nav .nav-sections ul > li > a:hover,
+  header nav .nav-sections ul > li > button:hover {
+    color: #2563eb;
   }
 }
-
-/* Dropdown */
-@media (width >= 900px) {
-
-  header nav .nav-sections .default-content-wrapper > ul > li > button[aria-expanded='true'] + ul {
-    background: white;
-    border-radius: 16px;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 16px 40px rgb(0 0 0 / 10%);
-    padding: 20px;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 10px 0;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li a:hover {
-    color: var(--premium-primary);
-  }
-}
-
-/* Mobile Menu */
-header nav[aria-expanded='true'] {
-  background: white;
-}
-
-/* Mobile Links */
-header nav .nav-sections ul > li {
-  margin-bottom: 12px;
-}
-
-header nav .nav-sections a {
-  color: var(--premium-text);
-  text-decoration: none;
-}
-
-/* Hamburger */
-header nav .nav-hamburger button:hover {
-  opacity: .75;
-}
-
-/* Active State */
-header nav .nav-sections .nav-drop > button:hover,
-header nav .nav-sections a:hover {
-  color: var(--premium-primary);
-}
-
-/* Optional CTA style for last
