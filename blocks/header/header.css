@@ -1,90 +1,104 @@
-/* =====================================
-   AUREVIA PREMIUM HEADER ENHANCEMENTS
-   ===================================== */
+/* ===========================
+   AUREVIA PREMIUM HEADER
+   =========================== */
 
-/* Premium Navbar */
-header .nav-wrapper {
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid #eaeaea;
-  box-shadow: 0 4px 24px rgb(0 0 0 / 6%);
-  transition: all .3s ease;
+header .nav-wrapper{
+  background:#fff;
+  border-bottom:1px solid #e5e7eb;
+  box-shadow:0 4px 20px rgba(0,0,0,.06);
 }
 
-/* Larger Header */
-header nav {
-  min-height: 72px;
-}
+/* Brand */
 
-/* Brand Styling */
 header .nav-brand {
-  font-size: 1.8rem;
-  font-weight: 800;
-  letter-spacing: -1px;
+  font-size:32px;
+  font-weight:800;
+  letter-spacing:-1px;
 }
 
 header .nav-brand a {
-  text-decoration: none;
-  color: #111827;
+  text-decoration:none;
+  color:#111827;
 }
 
-/* Desktop Navigation */
-@media (width >= 900px) {
+/* Desktop Nav */
+
+@media (min-width: 900px) {
+
+  header nav {
+    height:72px;
+  }
 
   header nav .nav-sections ul {
-    gap: 2rem;
+    display:flex;
+    align-items:center;
+    gap:32px;
+    margin:0;
+    padding:0;
+  }
+
+  header nav .nav-sections ul li {
+    list-style:none;
   }
 
   header nav .nav-sections a,
-  header nav .nav-sections .nav-drop > button {
-    color: #334155;
-    font-weight: 600;
-    transition: all .25s ease;
+  header nav .nav-sections button {
+    color:#334155;
+    font-size:15px;
+    font-weight:600;
+    text-decoration:none;
+    transition:all .25s ease;
   }
 
   header nav .nav-sections a:hover,
-  header nav .nav-sections .nav-drop > button:hover {
-    color: #2563eb;
+  header nav .nav-sections button:hover {
+    color:#2563eb;
   }
 
-  /* Smooth Underline */
-  header nav .nav-sections .default-content-wrapper > ul > li {
-    position: relative;
-  }
+  /* Premium Dropdown */
 
-  header nav .nav-sections .default-content-wrapper > ul > li > a::after,
-  header nav .nav-sections .default-content-wrapper > ul > li > button::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 0;
-    height: 2px;
-    background: #2563eb;
-    transition: width .3s ease;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li:hover > a::after,
-  header nav .nav-sections .default-content-wrapper > ul > li:hover > button::after {
-    width: 100%;
-  }
-}
-
-/* Premium Dropdown */
-@media (width >= 900px) {
-
-  header nav .nav-sections .default-content-wrapper > ul > li > button[aria-expanded='true'] + ul {
-    background: #fff;
-    border-radius: 16px;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 20px 50px rgb(0 0 0 / 12%);
-    padding: 20px;
-    animation: fadeDropdown .25s ease forwards;
+  header nav .nav-sections .default-content-wrapper > ul > li > ul {
+    border-radius:16px;
+    background:#fff;
+    border:1px solid #e5e7eb;
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 10px 0;
+    padding:10px 0;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li a:hover {
+    color:#2563eb;
+    padding-left:4px;
+  }
+}
+
+/* Mobile Menu */
+
+header nav[aria-expanded='true'] {
+  background:#fff;
+}
+
+header nav[aria-expanded='true'] .nav-sections ul {
+  padding-top:20px;
+}
+
+header nav[aria-expanded='true'] .nav-sections li {
+  margin-bottom:12px;
+}
+
+header nav[aria-expanded='true'] .nav-sections a {
+  font-size:18px;
+  font-weight:600;
+}
+
+/* Search Icon */
+
+header .nav-tools a {
+  transition:.3s ease;
+}
+
+header .nav-tools a:hover {
+  color:#2563eb;
+}
